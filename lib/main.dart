@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:forca/routes/splash_screen_route.dart';
 
 void main() {
   runApp(const ForcaApp());
@@ -27,9 +28,10 @@ class ForcaHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: Theme.of(context).backgroundColor,
-      ),
+      // body: Container(
+      //   color: Theme.of(context).backgroundColor,
+      // ),
+      body: SplashScreenRoute(),
     );
   }
 }
