@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:forca/routes/welcome_route.dart';
 import '../widgets/circular_image_widget.dart';
 
 class SplashScreenRoute extends StatefulWidget {
@@ -12,6 +15,14 @@ class _SplashScreenRouteState extends State<SplashScreenRoute> {
   @override
   void initState() {
     super.initState();
+
+    ///Temporizador que após 3 segundos promoverá a navegação para uma nova rota
+    Timer(Duration(seconds: 3), () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => WelcomeRoute()),
+      );
+    });
   }
 
   @override
