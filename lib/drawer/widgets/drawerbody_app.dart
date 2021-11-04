@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class DrawerBodyApp extends StatelessWidget {
-  DrawerBodyApp({Key? key}) : super(key: key);
+  final Widget child;
 
-  final Color g1 = Colors.green[200] ?? Colors.white;
+  DrawerBodyApp({Key? key, required this.child}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +19,7 @@ class DrawerBodyApp extends StatelessWidget {
           stops: [0.0,1.0],
         )
       ),
+      child: this.child,
     ));
   }
 }
