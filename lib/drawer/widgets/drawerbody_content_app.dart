@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:forca/drawer/widgets/listTile_custom_app_widget.dart';
 
 class DrawerBodyContentApp extends StatelessWidget {
   const DrawerBodyContentApp({Key? key}) : super(key: key);
@@ -23,14 +24,13 @@ class DrawerBodyContentApp extends StatelessWidget {
             ),
             onExpansionChanged: null,
             children: <Widget>[
-              _createListTile(
-                  insetsLeft: 62.0,
+              ListTileCustomAppWidget(
                   titleText: 'Novas Palavras',
-                  subtitleText: 'Vamos inserir Palavras?'),
-              _createListTile(
-                  insetsLeft: 62.0,
-                  titleText: 'Palavras existentes',
-                  subtitleText: 'Vamos ver as palavras que temos?'),
+                  subTitleText: 'Vamos inserir palavras?'),
+              ListTileCustomAppWidget(
+                titleText: 'Palavras existentes',
+                subTitleText: 'Vamos ver as que já temos?',
+              ),
             ],
           ),
         ),
