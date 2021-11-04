@@ -45,7 +45,7 @@ class _SplashScreenRouteState extends State<SplashScreenRoute> {
       children: <Widget>[
         CircularImageWidget(
           imgProvider: AssetImage(
-            'assets/images/splashscreen.png',
+            'assets/images/iconhangman.png',
           ),
         ),
         Padding(

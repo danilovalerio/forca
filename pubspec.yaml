@@ -69,6 +69,7 @@ flutter:
 #    - assets/images/splashscreen.png
 #    - assets/images/splash_ajuste.jpg
     - assets/images/
+    - assets/images/drawer/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
