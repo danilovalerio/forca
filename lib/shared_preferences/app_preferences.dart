@@ -12,4 +12,9 @@ class AppPreferences {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.getBool(kWelcomeRead) ?? false;
   }
+
+  static clearPreferences() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.clear();
+  }
 }

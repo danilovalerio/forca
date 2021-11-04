@@ -17,6 +17,7 @@ class ForcaApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         backgroundColor: Colors.green,
       ),
+      debugShowCheckedModeBanner: false,
       home: const ForcaHomePage(),
     );
   }
