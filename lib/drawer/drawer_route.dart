@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:forca/drawer/widgets/drawerbody_app.dart';
 import 'package:forca/drawer/widgets/drawerheader_app.dart';
 
 class DrawerRoute extends StatelessWidget {
@@ -17,7 +18,8 @@ class DrawerRoute extends StatelessWidget {
       drawer: Drawer(
         child: Column(
           children: <Widget>[
-            DrawerHeaderApp()
+            DrawerHeaderApp(),
+            DrawerBodyApp(),
           ],
         ),
       ),
