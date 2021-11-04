@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'home_route.dart';
+
 class WelcomeRoute extends StatefulWidget {
   const WelcomeRoute({Key? key}) : super(key: key);
 
@@ -54,15 +56,19 @@ class _WelcomeRouteState extends State<WelcomeRoute> {
                   ],
                 ),
                 SizedBox(width: 10),
-                const ElevatedButton(
-                  onPressed: null,
+                ElevatedButton(
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomeRoute()),
+                  ),
                   child: Text(
-                    'Disable Button',
+                    'Avançar',
                     style: TextStyle(fontSize: 20),
                   ),
                 ),
+                SizedBox(height: 20),
               ],
-            )
+            ),
           ],
         ),
       ),

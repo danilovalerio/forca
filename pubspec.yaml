@@ -65,7 +65,10 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
-    - assets/images/splashscreen.jpg
+#    - assets/images/splashscreen.jpg
+#    - assets/images/splashscreen.png
+#    - assets/images/splash_ajuste.jpg
+    - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
