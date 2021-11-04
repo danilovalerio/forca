@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class DrawerBodyContentApp extends StatelessWidget {
-
   const DrawerBodyContentApp({Key? key}) : super(key: key);
 
   @override
@@ -10,57 +9,62 @@ class DrawerBodyContentApp extends StatelessWidget {
       children: <Widget>[
         ListTileTheme(
           contentPadding: EdgeInsets.only(left: 6.0),
-            child: ExpansionTile(
-              leading: CircleAvatar(
-                backgroundImage: AssetImage('assets/images/drawer/words_list.png'),
-              ),
-              title: Text(
-                "Base de Palavras",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16.0,
-                ),
-              ),
-              onExpansionChanged: null,
-              children: <Widget>[
-                ListTile(
-                  contentPadding: EdgeInsets.only(left: 62.0),
-                  trailing: Icon(Icons.arrow_forward),
-                  title: Text('Novas Palavras'),
-                  subtitle: Text('Vamos inserir novas palavras?'),
-                  onTap: () {},
-                ),
-                ListTile(
-                  contentPadding: EdgeInsets.only(left: 62.0),
-                  trailing: Icon(Icons.arrow_forward),
-                  title: Text('Palavras existentes'),
-                  subtitle: Text('Vamos as palavras já temos?'),
-                  onTap: () {},
-                ),
-              ],
+          child: ExpansionTile(
+            leading: CircleAvatar(
+              backgroundImage:
+                  AssetImage('assets/images/drawer/words_list.png'),
             ),
-        ),
-        ListTile(
-          contentPadding: EdgeInsets.only(left: 6.0),
-          leading: CircleAvatar(
-            backgroundImage: AssetImage('assets/images/drawer/icon_play.png'),
+            title: Text(
+              "Base de Palavras",
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 16.0,
+              ),
+            ),
+            onExpansionChanged: null,
+            children: <Widget>[
+              _createListTile(
+                  insetsLeft: 62.0,
+                  titleText: 'Novas Palavras',
+                  subtitleText: 'Vamos inserir Palavras?'),
+              _createListTile(
+                  insetsLeft: 62.0,
+                  titleText: 'Palavras existentes',
+                  subtitleText: 'Vamos ver as palavras que temos?'),
+            ],
           ),
-          trailing: Icon(Icons.arrow_forward),
-          title: Text('Jogar'),
-          subtitle: Text('Começar a diversão'),
-          onTap: () {},
         ),
-        ListTile(
-          contentPadding: EdgeInsets.only(left: 6.0),
-          leading: CircleAvatar(
-            backgroundImage: AssetImage('assets/images/drawer/score_icon.png'),
-          ),
-          trailing: Icon(Icons.arrow_forward),
-          title: Text('Score'),
-          subtitle: Text('Relação dos top 10'),
-          onTap: () {},
+        _createListTile(
+          titleText: 'Jogar',
+          subtitleText: 'Começar a diversão',
+          imageName: "icon_play.png",
+        ),
+        _createListTile(
+          titleText: 'Score',
+          subtitleText: 'Relação dos top 10',
+          imageName: "score_icon.png",
         ),
       ],
+    );
+  }
+
+  ///Os listTiles tem muita coisa em comum então vamos tirar a redundância com essa função
+  ListTile _createListTile({
+    insetsLeft = 6.0,
+    String imageName = "",
+    required String titleText,
+    required String subtitleText,
+  }) {
+    return ListTile(
+      contentPadding: EdgeInsets.only(left: insetsLeft),
+      leading: imageName.isNotEmpty
+          ? CircleAvatar(
+              backgroundImage: AssetImage("assets/images/drawer/$imageName"))
+          : null,
+      trailing: Icon(Icons.arrow_forward),
+      title: Text(titleText),
+      subtitle: Text(subtitleText),
+      onTap: () {},
     );
   }
 }
