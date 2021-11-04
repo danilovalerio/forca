@@ -8,6 +8,8 @@ class WelcomeRoute extends StatefulWidget {
 }
 
 class _WelcomeRouteState extends State<WelcomeRoute> {
+  bool _checkBoxIsChecked = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +42,15 @@ class _WelcomeRouteState extends State<WelcomeRoute> {
                       ),
                     ),
                     SizedBox(width: 5),
-                    Checkbox(value: true, onChanged: null),
+                    Checkbox(
+                        value: this._checkBoxIsChecked,
+                        onChanged: (status) {
+                          debugPrint("clicou e agora o status é: $status");
+                          setState(() {
+                            this._checkBoxIsChecked = status!;
+                          });
+                        }),
+                    SizedBox(width: 20),
                   ],
                 ),
                 SizedBox(width: 10),
