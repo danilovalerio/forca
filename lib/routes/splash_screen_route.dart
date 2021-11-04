@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:forca/drawer/drawer_route.dart';
 import 'package:forca/routes/home_route.dart';
 import 'package:forca/routes/welcome_route.dart';
 import 'package:forca/shared_preferences/app_preferences.dart';
@@ -19,18 +20,21 @@ class _SplashScreenRouteState extends State<SplashScreenRoute> {
     super.initState();
 
     ///Temporizador que após 3 segundos promoverá a navegação para uma nova rota
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 2), () {
 
       ///Lê o welcomeRead e passa o result para navegacao assincrono nao recomendado
       // AppPreferences.getWelcomeRead().then((status) {
       //   _whereToNavigate(welcomeRead: status);
       // });
+      Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => DrawerRoute()));
 
-      WidgetsBinding.instance!.addPostFrameCallback((_) {
-        AppPreferences.getWelcomeRead().then((status) {
-          _whereToNavigate(welcomeRead: status);
-        });
-      });
+      // WidgetsBinding.instance!.addPostFrameCallback((_) {
+      //   AppPreferences.getWelcomeRead().then((status) {
+      //     _whereToNavigate(welcomeRead: status);
+      //   });
+      // });
     });
   }
 
